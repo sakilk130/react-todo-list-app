@@ -22,7 +22,7 @@ function TodoForm(props) {
         type="text"
         placeholder="Add...."
         value={input}
-        name="input"
+        name="text"
         onChange={handelChange}
       />
       <button className="form-button" type="submit">
