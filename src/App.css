@@ -10,8 +10,8 @@
 body {
   background: linear-gradient(
     90deg,
-    rgb(170, 209, 167) 0%,
-    rgb(21, 27, 77) 100%
+    rgb(64, 141, 124) 0%,
+    rgb(165, 148, 141) 100%
   );
 }
 .App {
@@ -64,18 +64,18 @@ h1 {
   outline: none;
   background: linear-gradient(
     90deg,
-    rgb(220, 220, 221) 0%,
-    rgb(180, 176, 182) 100%
+    rgb(64, 141, 124) 0%,
+    rgb(165, 148, 141) 100%
   );
   color: #fff;
   text-transform: capitalize;
 }
 
-.list-input.edit {
+.input.edit {
   border: 2px solid#bbbbbb;
 }
 
-.list-button.edit {
+.form-button.edit {
   background: linear-gradient(
     90deg,
     rgb(91, 94, 97) 0%,
@@ -98,7 +98,7 @@ h1 {
   color: #fff;
   background: linear-gradient(
     90deg,
-    rgb(94, 89, 86) 0%,
+    rgb(64, 141, 124) 0%,
     rgb(165, 148, 141) 100%
   );
 

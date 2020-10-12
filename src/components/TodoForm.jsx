@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { CgPlayListAdd } from 'react-icons/cg';
 
 function TodoForm(props) {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(props.edit ? props.edit.value : '');
 
   const inputFocus = useRef();
   useEffect(() => {
@@ -15,8 +15,9 @@ function TodoForm(props) {
 
   const handelSubmit = (e) => {
     e.preventDefault();
+
     props.onSubmit({
-      id: Math.floor(Math.random() * 10000),
+      id: Math.floor(Math.random() * 1000 + 1),
       text: input,
     });
     setInput('');
@@ -24,18 +25,37 @@ function TodoForm(props) {
 
   return (
     <form className="form" onSubmit={handelSubmit}>
-      <input
-        className="input"
-        type="text"
-        placeholder="Add...."
-        value={input}
-        name="text"
-        onChange={handelChange}
-        ref={inputFocus}
-      />
-      <button className="form-button" type="submit">
-        <CgPlayListAdd />
-      </button>
+      {props.edit ? (
+        <>
+          <input
+            className="input edit"
+            type="text"
+            placeholder="Edit..."
+            value={input}
+            name="text"
+            onChange={handelChange}
+            ref={inputFocus}
+          />
+          <button className="form-button edit" type="submit">
+            Edit
+          </button>
+        </>
+      ) : (
+        <>
+          <input
+            className="input"
+            type="text"
+            placeholder="Add...."
+            value={input}
+            name="text"
+            onChange={handelChange}
+            ref={inputFocus}
+          />
+          <button className="form-button" type="submit">
+            <CgPlayListAdd />
+          </button>
+        </>
+      )}
     </form>
   );
 }
