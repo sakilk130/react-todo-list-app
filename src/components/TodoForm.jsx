@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CgPlayListAdd } from 'react-icons/cg';
 
 function TodoForm(props) {
   const [input, setInput] = useState('');
+
+  const inputFocus = useRef();
+  useEffect(() => {
+    inputFocus.current.focus();
+  });
+
   const handelChange = (e) => {
     setInput(e.target.value);
   };
+
   const handelSubmit = (e) => {
     e.preventDefault();
     props.onSubmit({
@@ -24,6 +31,7 @@ function TodoForm(props) {
         value={input}
         name="text"
         onChange={handelChange}
+        ref={inputFocus}
       />
       <button className="form-button" type="submit">
         <CgPlayListAdd />
