@@ -23,8 +23,11 @@ function Todo({ lists, completeList, deleteList, editList }) {
       <div key={list.id} onClick={() => completeList(list.id)}>
         {list.text}
       </div>
-      <div className="icons">
-        <FaEdit onClick={() => setEdit({ id: list.id, value: list.text })} />
+      <div className="icon">
+        <FaEdit
+          className="edit-icon"
+          onClick={() => setEdit({ id: list.id, value: list.text })}
+        />
         <MdDeleteForever
           className="delete-icon"
           onClick={() => deleteList(list.id)}

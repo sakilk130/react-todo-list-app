@@ -40,7 +40,6 @@ function TodoList() {
 
   return (
     <div>
-      <h2>Hello</h2>
       <TodoForm onSubmit={addList} />
       <Todo
         lists={lists}
