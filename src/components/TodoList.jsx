@@ -12,7 +12,10 @@ function TodoList() {
     setList(newList);
     console.log(list, ...lists);
   };
-
+  const deleteList = (id) => {
+    const deleteA = [...lists].filter((list) => list.id !== id);
+    setList(deleteA);
+  };
   const completeList = (id) => {
     let editLists = lists.map((list) => {
       if (list.id === id) {
@@ -26,7 +29,7 @@ function TodoList() {
     <div>
       <h2>Hello</h2>
       <TodoForm onSubmit={addList} />
-      <Todo lists={lists} completeList={completeList} />
+      <Todo lists={lists} completeList={completeList} deleteList={deleteList} />
     </div>
   );
 }
