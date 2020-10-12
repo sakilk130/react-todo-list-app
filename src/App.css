@@ -19,7 +19,7 @@ body {
   flex-direction: column;
   justify-content: start;
   width: 520px;
-  min-height: 600px;
+  min-height: 520px;
   background: #6a775e;
   text-align: center;
   margin: 128px auto;
